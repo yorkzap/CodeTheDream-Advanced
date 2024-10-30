@@ -10,13 +10,17 @@ async function fetchTemperature() {
   try {
     const response = await fetch(url);
     const data = await response.json();
-    // Log temperature
-    console.log(`Temperature:`, data.hourly.temperature_2m);
-    // Log first value
-    console.log(`Current Temperature: ${data.hourly.temperature_2m[0]}°C`);
+    // Get first hour temp
+    const temp = data.hourly.temperature_2m[0];  
+    displayTemperature(`Current Temperature: ${temp}°C`);
   } catch (error) {
-    console.error('Error fetching temperature:', error);
+    displayTemperature('Error fetching temperature data.');
+    console.error(error);
   }
 }
 
-fetchTemperature();
+// Helper funct for displaying temp
+function displayTemperature(message) {
+    const weatherDiv = document.getElementById('weather-data');  // Select div from HTML
+    weatherDiv.innerText = message;  // Set the inner text with the message
+  }
