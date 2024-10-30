@@ -34,3 +34,6 @@ API documentation here: [https://open-meteo.com/en/docs](https://open-meteo.com/
 ## Screenshots
 
 ![App Preview](image.png)
+
+## Final Notes
+You might notice in the commit history that the `.gitignore` file was added and then deleted. This is because I realized that the Open-Meteo API does not require an API key. And so, the `.gitignore` file was removed. I had planned to add node modules for logging. But decided to keep the app very minimal and simple. I would have included the `.env` file for security and best practices if API keys were needed in this app.
