@@ -14,7 +14,7 @@ async function fetchTemperature() {
       const temp = data.hourly.temperature_2m[0];
       displayData(`Current Temperature: ${temp}°C`);
     } catch (error) {
-      displayData('Error fetching temperature.');
+      displayData('Error fetching temperature. Feeling a bit under the weather (heh)');
       console.error(error);
     }
   }
